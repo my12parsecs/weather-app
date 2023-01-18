@@ -1,0 +1,51 @@
+body{
+    font-family: sans-serif;
+}
+
+.current-container{
+    border: 1px solid;
+    border-radius: 20px;
+    width: 33vw;
+    margin: 30px auto 0px auto;
+    padding-bottom: 20px;
+}
+
+#icon{
+    display: flex;
+    margin: -15px auto;
+}
+#main{
+    text-align: center;
+    margin-top: 0;
+}
+#main > p{
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+.temp{
+    font-size: 60px;
+}
+.city{
+    font-size: 30px;
+}
+.global{
+    font-size: 15px;
+}
+
+.recieved{
+    font-size: 12px;
+}
+
+
+
+#sub{
+    display: flex;
+}
+
+.forecast-container{
+    text-align: center;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: auto auto;
+}
