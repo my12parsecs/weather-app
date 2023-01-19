@@ -1,51 +1,101 @@
-body{
-    font-family: sans-serif;
+body {
+  font-family: sans-serif;
+  background-image: url(https://www.yokohamaport.co.jp/wp/wp-content/uploads/2022/03/yokohamakou-R2-PA-01.jpg);
+  background-size: cover;
 }
 
-.current-container{
-    border: 1px solid;
-    border-radius: 20px;
-    width: 33vw;
-    margin: 30px auto 0px auto;
-    padding-bottom: 20px;
+.current-container {
+  border: 0.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  border-right-color: rgba(255, 255, 255, 0.2);
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+  width: 33vw;
+  margin: 30px auto 0px auto;
+  padding-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
 }
 
-#icon{
-    display: flex;
-    margin: -15px auto;
+#icon {
+  display: flex;
+  margin: -20px auto;
 }
-#main{
-    text-align: center;
-    margin-top: 0;
+#main {
+  text-align: center;
+  margin-top: 0;
 }
-#main > p{
-    margin: 0 auto;
+#main > p {
+  font-weight: 300;
+}
+
+.temp {
+  font-size: 63px;
+  margin: 0 auto;
+}
+.city {
+  font-size: 32px;
+  margin: 0 auto;
+}
+.global {
+  font-size: 12px;
+  margin: 1px auto;
+}
+
+.current-wrapper{
+    display: grid;
+    grid-template-columns: 80px 65px;
+    grid-template-rows: 20px 20px 20px 20px 20px;
+    grid-gap: 4px;
+    justify-content: center;
+    margin-top: 13px;
+    font-size: 17px;
     font-weight: 300;
 }
+.detail-left{
+    text-align: right;
+}
+.detail-right{
+    text-align: left;
+}
+.recieved {
+  font-size: 9px;
+  width: 200px;
+  text-align: center;
+  margin: auto;
+  margin-top: 5px;
+}
 
-.temp{
-    font-size: 60px;
+
+#test{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border: 0.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    border-right-color: rgba(255, 255, 255, 0.2);
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+    width: 650px;
+    margin: 0px auto 40px auto;
+    padding-top: 25px;
+    padding-right: 10px;
+    padding-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+
 }
-.city{
-    font-size: 30px;
+.forecast-wrapper {
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px 100px 100px;
+  grid-template-rows: 20px 20px 70px 25px 25px 25px;
 }
-.global{
+.forecast-date{
     font-size: 15px;
 }
-
-.recieved{
-    font-size: 12px;
+.forecast-time{
+    font-size: 20px;
 }
-
-
-
-#sub{
-    display: flex;
-}
-
-.forecast-container{
-    text-align: center;
-    border: 1px solid;
-    border-radius: 5px;
-    margin: auto auto;
+.forecast-icon{
+    width: 60px;
+    height: 60px;
+    margin: auto;
 }
