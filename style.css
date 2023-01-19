@@ -2,6 +2,9 @@ body {
   font-family: sans-serif;
   background-image: url(https://www.yokohamaport.co.jp/wp/wp-content/uploads/2022/03/yokohamakou-R2-PA-01.jpg);
   background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .current-container {
@@ -9,7 +12,7 @@ body {
   border-radius: 20px;
   border-right-color: rgba(255, 255, 255, 0.2);
   border-bottom-color: rgba(255, 255, 255, 0.2);
-  width: 33vw;
+  width: 330px;
   margin: 30px auto 0px auto;
   padding-bottom: 20px;
   background-color: rgba(255, 255, 255, 0.1);
@@ -18,34 +21,35 @@ body {
 
 #icon {
   display: flex;
-  margin: -20px auto;
+  margin: -10px auto -20px auto;
+  width: 160px;
 }
 #main {
   text-align: center;
   margin-top: 0;
-}
-#main > p {
   font-weight: 300;
 }
-
 .temp {
-  font-size: 63px;
+  font-size: 62px;
+  font-weight: 100;
   margin: 0 auto;
 }
 .city {
-  font-size: 32px;
+  font-size: 30px;
+  font-weight: 100;
   margin: 0 auto;
 }
 .global {
   font-size: 12px;
   margin: 1px auto;
+  color: rgb(70, 70, 70);
 }
 
 .current-wrapper{
     display: grid;
     grid-template-columns: 80px 65px;
     grid-template-rows: 20px 20px 20px 20px 20px;
-    grid-gap: 4px;
+    grid-gap: 5px;
     justify-content: center;
     margin-top: 13px;
     font-size: 17px;
@@ -53,6 +57,7 @@ body {
 }
 .detail-left{
     text-align: right;
+    margin-right: 6px;
 }
 .detail-right{
     text-align: left;
@@ -60,10 +65,13 @@ body {
 .recieved {
   font-size: 9px;
   width: 200px;
+  color: rgb(34, 34, 34);
   text-align: center;
   margin: auto;
   margin-top: 5px;
 }
+
+
 
 
 #test{
@@ -74,28 +82,31 @@ body {
     border-radius: 15px;
     border-right-color: rgba(255, 255, 255, 0.2);
     border-bottom-color: rgba(255, 255, 255, 0.2);
-    width: 650px;
+    width: 600px;
     margin: 0px auto 40px auto;
     padding-top: 25px;
-    padding-right: 10px;
+    padding-right: 0px;
     padding-bottom: 15px;
     background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(20px);
-
+    font-weight: 300;
 }
 .forecast-wrapper {
   display: grid;
-  grid-template-columns: 100px 100px 100px 100px 100px 100px;
-  grid-template-rows: 20px 20px 70px 25px 25px 25px;
+  grid-template-columns: 70px 100px 100px 100px 100px 100px;
+  grid-template-rows: 16px 18px 70px 25px 25px 25px;
 }
 .forecast-date{
-    font-size: 15px;
+    font-size: 13px;
 }
 .forecast-time{
-    font-size: 20px;
+    font-size: 19px;
 }
 .forecast-icon{
     width: 60px;
     height: 60px;
     margin: auto;
+}
+.forecast-detail{
+    text-align: right;
 }

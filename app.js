@@ -3,6 +3,15 @@ let forecast;
 const main = document.getElementById("main");
 const test = document.getElementById("test");
 
+
+// 今後の予定
+// 天気のアイコンをもっと画質良くてデザインも良いやつに
+// 他の都市=>シンガポール、ニューヨーク、パリなど
+// 天気の地図
+// openweatherの他のAPI
+
+
+
 fetch(
   `https://api.openweathermap.org/data/2.5/weather?q=Yokohama,jp&appid=00646bf47bf59252c96e0d849c52c488&lang=ja&units=metric`
 )
@@ -19,7 +28,7 @@ fetch(
     // Dateがミリ秒なので1000倍が必要
     function unixChange(unix) {
       let dateTime = new Date(unix * 1000);
-      return dateTime.toLocaleTimeString("ja-JP");
+      return dateTime.toLocaleTimeString("ja-JP").slice(0, -3)
     //   return dateTime.toString()
     }
     function unixChangeFull(unix) {
@@ -100,19 +109,19 @@ fetch(
     <img id="icon2" class="forecast-icon"></img>
     <img id="icon3" class="forecast-icon"></img>
     <img id="icon4" class="forecast-icon"></img>
-    <div>気温</div>
+    <div class="forecast-detail">気温</div>
     <div>${Math.round(forecast.list[0].main.temp * 10)/10}°</div>
     <div>${Math.round(forecast.list[1].main.temp * 10)/10}°</div>
     <div>${Math.round(forecast.list[2].main.temp * 10)/10}°</div>
     <div>${Math.round(forecast.list[3].main.temp * 10)/10}°</div>
     <div>${Math.round(forecast.list[4].main.temp * 10)/10}°</div>
-    <div>湿度</div>
+    <div class="forecast-detail">湿度</div>
     <div>${forecast.list[0].main.humidity}%</div>
     <div>${forecast.list[1].main.humidity}%</div>
     <div>${forecast.list[2].main.humidity}%</div>
     <div>${forecast.list[3].main.humidity}%</div>
     <div>${forecast.list[4].main.humidity}%</div>
-    <div>降水確率</div>
+    <div class="forecast-detail">降水確率</div>
     <div>${kosui(forecast.list[0].pop)}%</div>
     <div>${kosui(forecast.list[1].pop)}%</div>
     <div>${kosui(forecast.list[2].pop)}%</div>
@@ -143,3 +152,10 @@ fetch(
 // <p>降水確率　${forecast.list[0].pop}かける100で%</p>
 // <p>昼夜　${forecast.list[0].sys.pod}n-night or d-day</p>
 // <p>予報時間　${forecast.list[0].dt_txt}足す9時間</p>
+
+
+
+
+fetch("https://tile.openweathermap.org/map/precipitation_new/5/138/36.png?appid=00646bf47bf59252c96e0d849c52c488")
+  .then((res)=> res)
+  .then((data)=> console.log(data))
