@@ -25,7 +25,7 @@ fetch(
   .then((res) => res.json())
   .then((data) => {
     tenki = data;
-    console.log(tenki);
+    // console.log(tenki);
 
     const icon = `http://openweathermap.org/img/wn/${tenki.weather["0"].icon}@4x.png`;
     document.getElementById("icon").src = icon;
@@ -90,7 +90,7 @@ fetch(
   .then((res) => res.json())
   .then((data) => {
     forecast = data;
-    console.log(forecast);
+    // console.log(forecast);
 
     function unixChangeDate(unix) {
       let dateTime = new Date(unix * 1000);
@@ -175,7 +175,35 @@ fetch(
 
 
 
-fetch("https://tile.openweathermap.org/map/precipitation_new/5/138/36.png?appid=00646bf47bf59252c96e0d849c52c488")
-  .then((res)=> res)
-  .then((data)=> console.log(data))
+// fetch("https://tile.openweathermap.org/map/precipitation_new/5/138/36.png?appid=00646bf47bf59252c96e0d849c52c488")
+//   .then((res)=> res)
+//   .then((data)=> console.log(data))
 
+
+
+
+const submit = document.getElementById("background-submit")
+const button = document.getElementById("background-button")
+const body = document.body
+
+body.style.backgroundImage = `url(${localStorage.getItem("url")})`
+
+// body.style.backgroundImage = "url(https://gaijinpot.scdn3.secure.raxcdn.com/app/uploads/sites/6/2016/08/Minato-mirai.jpg)"
+
+submit.addEventListener("click", function(){
+  if(localStorage.getItem("url")){
+    localStorage.clear()
+  }
+  const value = document.forms[0].elements[0].value
+  localStorage.setItem("url", value)
+  body.style.backgroundImage = `url(${localStorage.getItem("url")})`
+})
+
+button.addEventListener("click",function(){
+  const defaultUrl = "https://gaijinpot.scdn3.secure.raxcdn.com/app/uploads/sites/6/2016/08/Minato-mirai.jpg"
+  if(localStorage.getItem("url")){
+    localStorage.clear()
+  }
+  localStorage.setItem("url", defaultUrl)
+  body.style.backgroundImage = `url(${defaultUrl})`
+})
