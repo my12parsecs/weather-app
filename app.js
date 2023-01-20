@@ -186,6 +186,8 @@ const submit = document.getElementById("background-submit")
 const button = document.getElementById("background-button")
 const body = document.body
 
+
+localStorage.setItem("url", "https://gaijinpot.scdn3.secure.raxcdn.com/app/uploads/sites/6/2016/08/Minato-mirai.jpg")
 body.style.backgroundImage = `url(${localStorage.getItem("url")})`
 
 // body.style.backgroundImage = "url(https://gaijinpot.scdn3.secure.raxcdn.com/app/uploads/sites/6/2016/08/Minato-mirai.jpg)"
