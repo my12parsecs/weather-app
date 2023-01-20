@@ -10,7 +10,12 @@
     <link rel="icon" href="/weather-icon.png" />
   </head>
   <body>
-    <nav>City</nav>
+    <nav class="nav">
+      <ul>
+        <li>City</li>
+        <li><a href="settings.html">Settings</a></li>
+      </ul>
+    </nav>
 
     <div class="current-container">
       <img id="icon" src="http://openweathermap.org/img/wn/01n@4x.png" style="visibility: hidden;" />
@@ -79,6 +84,12 @@
         <div>-%</div>
         <div>-%</div>
         </div>
+    </div>
+
+    <div class="background">
+      <p id="background-description">Change Background</p>
+      <input type="text" id="background-input" placeholder="Image URL">
+      <input type="submit" id="background-button" value="Submit">
     </div>
 
     <script src="app.js"></script>
