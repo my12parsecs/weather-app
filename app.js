@@ -2,6 +2,7 @@ let tenki;
 let forecast;
 const main = document.getElementById("main");
 const test = document.getElementById("test");
+const time = document.getElementById("time")
 
 
 // 今後の予定
@@ -10,6 +11,12 @@ const test = document.getElementById("test");
 // 天気の地図
 // openweatherの他のAPI
 
+
+function currentTime(){
+  let dateTime = new Date();
+  document.getElementById("time").innerHTML = `${dateTime.toLocaleTimeString("ja-JP")}`
+}
+currentTime()
 
 
 fetch(
@@ -45,6 +52,7 @@ fetch(
     main.innerHTML = `
     <p class="temp">${Math.round(tenki.main.temp * 10)/10}°</p>
     <p class="city">${tenki.name}</p>
+    <p id="time"></p>
     <p class="global">${tenki.sys.country}・UTC+${timezone}:00</p>
 
     <div class="current-wrapper">
@@ -62,10 +70,18 @@ fetch(
 
     <p class="recieved">データ取得時間　${unixChangeFull(tenki.dt)}</p>
     `;
+
+    currentTime()
+    setInterval('currentTime()', 1000)
   });
 
 //   <p>${tenki.weather["0"].main}</p>
 //   <p>天気　${tenki.weather["0"].description}</p>
+
+
+
+
+
 
 fetch(
   `https://api.openweathermap.org/data/2.5/forecast?q=Yokohama,jp&appid=00646bf47bf59252c96e0d849c52c488&lang=ja&units=metric`
@@ -156,6 +172,9 @@ fetch(
 
 
 
+
+
 fetch("https://tile.openweathermap.org/map/precipitation_new/5/138/36.png?appid=00646bf47bf59252c96e0d849c52c488")
   .then((res)=> res)
   .then((data)=> console.log(data))
+

@@ -7,16 +7,77 @@
     <title>Weather</title>
 
     <link href="style.css" rel="stylesheet" />
+    <link rel="icon" href="/weather-icon.png" />
   </head>
   <body>
+    <nav>City</nav>
+
     <div class="current-container">
-      <img id="icon" />
-      <div id="main"></div>
+      <img id="icon" src="http://openweathermap.org/img/wn/01n@4x.png" />
+      <div id="main">
+        <p class="temp">-</p>
+        <p class="city">横浜市</p>
+        <p id="time">--:--:--</p>
+        <p class="global">-・UTC-</p>
+    
+        <div class="current-wrapper">
+        <div class="detail-left">体感温度</div>
+        <div class="detail-right">-°</div>
+        <div class="detail-left">湿度</div>
+        <div class="detail-right">-%</div>
+        <div class="detail-left">雲量</div>
+        <div class="detail-right">-%</div>
+        <div class="detail-left">日の出</div>
+        <div class="detail-right">--:--:--</div>
+        <div class="detail-left">日の入り</div>
+        <div class="detail-right">--:--:--</div>
+        </div>
+        <p class="recieved">データ取得時間 -<br>GMT - ()</p>
+      </div>
     </div>
-    <br />
-    <div id="sub"></div>
-    <br />
-    <div id="test"></div>
+
+    <br>
+
+    <div id="test">
+      <div class="forecast-wrapper">
+        <div></div>
+        <div class="forecast-date">-/-</div>
+        <div class="forecast-date">-/-</div>
+        <div class="forecast-date">-/-</div>
+        <div class="forecast-date">-/-</div>
+        <div class="forecast-date">-/-</div>
+        <div></div>
+        <div class="forecast-time">--:--</div>
+        <div class="forecast-time">--:--</div>
+        <div class="forecast-time">--:--</div>
+        <div class="forecast-time">--:--</div>
+        <div class="forecast-time">--:--</div>
+        <div></div>
+        <img id="icon0" class="forecast-icon"></img>
+        <img id="icon1" class="forecast-icon"></img>
+        <img id="icon2" class="forecast-icon"></img>
+        <img id="icon3" class="forecast-icon"></img>
+        <img id="icon4" class="forecast-icon"></img>
+        <div class="forecast-detail">気温</div>
+        <div>-°</div>
+        <div>-°</div>
+        <div>-°</div>
+        <div>-°</div>
+        <div>-°</div>
+        <div class="forecast-detail">湿度</div>
+        <div>-%</div>
+        <div>-%</div>
+        <div>-%</div>
+        <div>-%</div>
+        <div>-%</div>
+        <div class="forecast-detail">降水確率</div>
+        <div>-%</div>
+        <div>-%</div>
+        <div>-%</div>
+        <div>-%</div>
+        <div>-%</div>
+        </div>
+    </div>
 
     <script src="app.js"></script>
   </body>
