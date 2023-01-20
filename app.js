@@ -29,6 +29,7 @@ fetch(
 
     const icon = `http://openweathermap.org/img/wn/${tenki.weather["0"].icon}@4x.png`;
     document.getElementById("icon").src = icon;
+    document.getElementById("icon").style.visibility = "visible";
 
     const timezone = tenki.timezone / 3600;
 

@@ -13,8 +13,9 @@
     <nav>City</nav>
 
     <div class="current-container">
-      <img id="icon" src="http://openweathermap.org/img/wn/01n@4x.png" />
+      <img id="icon" src="http://openweathermap.org/img/wn/01n@4x.png" style="visibility: hidden;" />
       <div id="main">
+        <div style="visibility: hidden;">
         <p class="temp">-</p>
         <p class="city">横浜市</p>
         <p id="time">--:--:--</p>
@@ -33,13 +34,14 @@
         <div class="detail-right">--:--:--</div>
         </div>
         <p class="recieved">データ取得時間 -<br>GMT - ()</p>
+        </div>
       </div>
     </div>
 
     <br>
 
     <div id="test">
-      <div class="forecast-wrapper">
+      <div class="forecast-wrapper" style="visibility: hidden;">
         <div></div>
         <div class="forecast-date">-/-</div>
         <div class="forecast-date">-/-</div>
