@@ -1,3 +1,5 @@
+// require('dotenv').config();
+
 let tenki;
 let forecast;
 const main = document.getElementById("main");
@@ -20,6 +22,7 @@ currentTime()
 
 
 fetch(
+  // `https://api.openweathermap.org/data/2.5/weather?q=Yokohama,jp&appid=${process.env.KEY1}&lang=ja&units=metric`
   `https://api.openweathermap.org/data/2.5/weather?q=Yokohama,jp&appid=00646bf47bf59252c96e0d849c52c488&lang=ja&units=metric`
 )
   .then((res) => res.json())
@@ -187,7 +190,7 @@ const button = document.getElementById("background-button")
 const body = document.body
 
 
-localStorage.setItem("url", "https://gaijinpot.scdn3.secure.raxcdn.com/app/uploads/sites/6/2016/08/Minato-mirai.jpg")
+// localStorage.setItem("url", "https://gaijinpot.scdn3.secure.raxcdn.com/app/uploads/sites/6/2016/08/Minato-mirai.jpg")
 body.style.backgroundImage = `url(${localStorage.getItem("url")})`
 
 // body.style.backgroundImage = "url(https://gaijinpot.scdn3.secure.raxcdn.com/app/uploads/sites/6/2016/08/Minato-mirai.jpg)"
