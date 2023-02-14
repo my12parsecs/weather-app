@@ -185,6 +185,27 @@ fetch(
 
 
 
+
+// 自動リロード
+function reload(){
+  window.location.reload()
+}
+
+window.addEventListener("load", function(){
+  // 1分ごとに
+  setTimeout(reload, 60000);
+})
+
+
+
+
+
+
+
+
+
+// 背景画像設定
+
 const submit = document.getElementById("background-submit")
 const button = document.getElementById("background-button")
 const body = document.body
