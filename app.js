@@ -9,7 +9,6 @@ const time = document.getElementById("time")
 const city = document.querySelector(".pull-down")
 const num = city.selectedIndex
 const selectCity = city.options[num].value
-console.log(selectCity);
 
 // 今後の予定
 // 天気のアイコンをもっと画質良くてデザインも良いやつに
@@ -17,12 +16,34 @@ console.log(selectCity);
 // 天気の地図
 // openweatherの他のAPI
 
+if(selectCity === "Yokohama"){
+  document.body.style.backgroundImage = 'url("https://www.yokohamaport.co.jp/wp/wp-content/uploads/2022/03/yokohamakou-R2-PA-01.jpg")'
+}else if(selectCity === "Paris"){
+  document.body.style.backgroundImage = 'url("https://assets.weforum.org/article/image/hJtDE4psGyQdqDfPVdyczLlG2Aq3RdjBFrO37lHiPJ4.jpg")'
+}else if(selectCity === "Barcelona"){
+  document.body.style.backgroundImage = 'url("https://images.unsplash.com/photo-1583422409516-2895a77efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80")'
+}else if(selectCity === "Zurich"){
+  document.body.style.backgroundImage = 'url("https://images.unsplash.com/photo-1620563092215-0fbc6b55cfc5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2342&q=80")'
+}else if(selectCity === "Rome"){
+  document.body.style.backgroundImage = 'url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/0_Castel_et_pont_Sant%27Angelo_%281%29.JPG/2560px-0_Castel_et_pont_Sant%27Angelo_%281%29.JPG")'
+}else if(selectCity === "Munich"){
+  document.body.style.backgroundImage = 'url("https://images.unsplash.com/photo-1577462281852-279bf4986f7b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80")'
+}else if(selectCity === "Amsterdam"){
+  document.body.style.backgroundImage = 'url("https://images.unsplash.com/photo-1516203709415-9d4bd0d5ce18?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2342&q=80")'
+}else if(selectCity === "Brussels"){
+  document.body.style.backgroundImage = 'url("https://images.contentstack.io/v3/assets/blt00454ccee8f8fe6b/bltb5cb5d32753041a6/61bc44b0abe5293e65780e91/US_Brussels_Belgium_Header.jpg")'
+}
+
+
 
 function currentTime(){
   let dateTime = new Date();
   document.getElementById("time").innerHTML = `${dateTime.toLocaleTimeString("ja-JP")}`
 }
 currentTime()
+
+
+
 
 
 fetch(
@@ -75,7 +96,6 @@ fetch(
     <div class="detail-left">日の入り</div>
     <div class="detail-right">${unixChange(tenki.sys.sunset)}</div>
     </div>
-
     <p class="recieved">データ取得時間　${unixChangeFull(tenki.dt)}</p>
     `;
 
@@ -220,7 +240,7 @@ const body = document.body
 
 
 // localStorage.setItem("url", "https://gaijinpot.scdn3.secure.raxcdn.com/app/uploads/sites/6/2016/08/Minato-mirai.jpg")
-body.style.backgroundImage = `url(${localStorage.getItem("url")})`
+// body.style.backgroundImage = `url(${localStorage.getItem("url")})`
 
 // body.style.backgroundImage = "url(https://gaijinpot.scdn3.secure.raxcdn.com/app/uploads/sites/6/2016/08/Minato-mirai.jpg)"
 
