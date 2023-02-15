@@ -6,6 +6,10 @@ const main = document.getElementById("main");
 const test = document.getElementById("test");
 const time = document.getElementById("time")
 
+const city = document.querySelector(".pull-down")
+const num = city.selectedIndex
+const selectCity = city.options[num].value
+console.log(selectCity);
 
 // 今後の予定
 // 天気のアイコンをもっと画質良くてデザインも良いやつに
@@ -23,7 +27,7 @@ currentTime()
 
 fetch(
   // `https://api.openweathermap.org/data/2.5/weather?q=Yokohama,jp&appid=${process.env.KEY1}&lang=ja&units=metric`
-  `https://api.openweathermap.org/data/2.5/weather?q=Yokohama,jp&appid=00646bf47bf59252c96e0d849c52c488&lang=ja&units=metric`
+  `https://api.openweathermap.org/data/2.5/weather?q=${selectCity}&appid=00646bf47bf59252c96e0d849c52c488&lang=ja&units=metric`
 )
   .then((res) => res.json())
   .then((data) => {
@@ -88,7 +92,7 @@ fetch(
 
 
 fetch(
-  `https://api.openweathermap.org/data/2.5/forecast?q=Yokohama,jp&appid=00646bf47bf59252c96e0d849c52c488&lang=ja&units=metric`
+  `https://api.openweathermap.org/data/2.5/forecast?q=${selectCity}&appid=00646bf47bf59252c96e0d849c52c488&lang=ja&units=metric`
 )
   .then((res) => res.json())
   .then((data) => {
@@ -186,6 +190,8 @@ fetch(
 
 
 
+
+
 // 自動リロード
 function reload(){
   window.location.reload()
@@ -193,8 +199,10 @@ function reload(){
 
 window.addEventListener("load", function(){
   // 1分ごとに
-  setTimeout(reload, 60000);
+  setTimeout(reload, 120000);
 })
+
+
 
 
 
